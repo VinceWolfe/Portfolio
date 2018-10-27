@@ -87,45 +87,56 @@ main {
   .bio-image {
     grid-area: bioimage;
     margin: auto;
-    border-radius: 50%;
     border: $secondary-color 3px solid;
   }
 
   .bio {
     grid-area: bio;
     font-size: 1.5rem;
+    text-align: justify;
   }
 
   .job-1 {
     grid-area: job1;
+    text-align: center;
   }
 
   .job-2 {
     grid-area: job2;
+    text-align: center;
   }
 
   .job-3 {
     grid-area: job3;
+    text-align: center;
   }
 
   .job {
     background: lighten($primary-color, 5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
   }
+
+  .job:hover {
+    background: linear-gradient(
+      $secondary-color,
+      #f5f5f5,
+      #f5f5f5,
+      #f5f5f5,
+      #f5f5f5
+    );
+    transition: 0.7s;
+  }
 }
-
-//Work Projects
-
+// Work Projects
 .projects {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
-
   img {
     width: 100%;
     border: 3px whitesmoke solid;
-
     &:hover {
       opacity: 0.5;
       border-color: $secondary-color;
@@ -133,23 +144,19 @@ main {
     }
   }
 }
-
-//Contact Page
-
+// Contact Page
 .boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem;
-
   div {
     font-size: 2rem;
     border: 3px whitesmoke solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     @include easeout;
-
     &:hover {
       padding: 0.5rem 1.5rem;
       background: $secondary-color;
@@ -160,9 +167,7 @@ main {
     }
   }
 }
-
-//Button styles
-
+// Button styles
 .btn {
   display: block;
   padding: 0.5rem;
@@ -173,19 +178,16 @@ main {
     color: set-text-color($secondary-color);
   }
 }
-
 .btn-dark {
   @extend .btn;
   background: darken($primary-color, 50);
   color: whitesmoke;
 }
-
 .btn-light {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: black;
 }
-
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -193,5 +195,4 @@ main {
   color: set-text-color($primary-color);
   height: 60px;
 }
-
 @import "mobile";
